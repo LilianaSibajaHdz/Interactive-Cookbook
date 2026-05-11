@@ -46,3 +46,11 @@ formulario.addEventListener('submit', (e) => {
     formulario.reset();
     mostrarRecetas(listaRecetas);
 });
+
+
+function eliminarReceta(indice) {
+    listaRecetas.splice(indice, 1);
+    mostrarRecetas(listaRecetas);
+}
+
+
