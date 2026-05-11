@@ -33,4 +33,7 @@ REDECOIN/
 ├── js/
 │   └── script.js  
 └── img/
-    └── ico.png   
+    └── ico.png
+```
+
+Para poder hacer uso de este mini proyecto funcional da click al siguiente link: [REDECOIN.com](https://lilianasibajahdz.github.io/Interactive-Cookbook/)
