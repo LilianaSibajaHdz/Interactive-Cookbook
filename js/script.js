@@ -1,8 +1,10 @@
-let listaRecetas = [];
+let listaRecetas = JSON.parse(localStorage.getItem('misRecetas')) || [];
 
 const formulario = document.getElementById('formularioReceta');
 const contenedor = document.getElementById('contenedorRecetas');
 const inputBuscador = document.getElementById('buscador');
+
+mostrarRecetas(listaRecetas);
 
 function mostrarRecetas(recetasParaMostrar) {
     contenedor.innerHTML = "";
@@ -43,6 +45,8 @@ formulario.addEventListener('submit', (e) => {
 
     listaRecetas.push(nuevaReceta);
 
+    actualizarStorage();
+
     formulario.reset();
     mostrarRecetas(listaRecetas);
 });
@@ -50,7 +54,12 @@ formulario.addEventListener('submit', (e) => {
 
 function eliminarReceta(indice) {
     listaRecetas.splice(indice, 1);
+    actualizarStorage();
     mostrarRecetas(listaRecetas);
+}
+
+function actualizarStorage() {
+    localStorage.setItem('misRecetas', JSON.stringify(listaRecetas));
 }
 
 inputBuscador.addEventListener('input', () => {
