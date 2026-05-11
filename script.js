@@ -53,4 +53,12 @@ function eliminarReceta(indice) {
     mostrarRecetas(listaRecetas);
 }
 
+inputBuscador.addEventListener('input', () => {
+    const terminoBusqueda = inputBuscador.value.toLowerCase();
 
+    const recetasFiltradas = listaRecetas.filter(receta => {
+        return receta.nombre.toLowerCase().includes(terminoBusqueda) || 
+               receta.categoria.toLowerCase().includes(terminoBusqueda);
+    });
+    mostrarRecetas(recetasFiltradas);
+});
